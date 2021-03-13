@@ -20,7 +20,15 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
+
+        //PrimaryColor takes over as the bar
+        //primaryColor: Colors.green,
+
+        //TEST BRIGHTNESS
+        //brightness: Brightness.dark, //This is the background like dark mode
         primarySwatch: Colors.green,
+        //TEST ACCENT COLOR
+        accentColor: Colors.yellow,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -93,21 +101,41 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            Expanded(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Text('Part 1'),
+                  ),
+                  Expanded(
+                    child: Text('I am here'),
+                  ),
+                  Expanded(
+                    child: Text('Last Part'),
+                  ),
+                ],
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Expanded(
+              child: Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headline4,
+              ),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        tooltip: 'Increment if you want',
+        child: Icon(
+          Icons.add,
+          //CHANGE THE COLOR OF THE + SIGN
+          color: Colors.pinkAccent,
+        ),
+      ),
     );
+
+    // This trailing comma makes auto-formatting nicer for build methods.
   }
 }
