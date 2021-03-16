@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         //brightness: Brightness.dark, //This is the background like dark mode
         primarySwatch: Colors.green,
         //TEST ACCENT COLOR
-        accentColor: Colors.yellow,
+        accentColor: Colors.black,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -85,33 +85,35 @@ class _MyHomePageState extends State<MyHomePage> {
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Expanded(
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: Text('Part 1'),
+                    child: Text('Row 1 Left'),
                   ),
                   Expanded(
-                    child: Text('I am here'),
+                    child: Text('Row 1 Middle'),
                   ),
                   Expanded(
-                    child: Text('Last Part'),
+                    child: Text('Row 1 Right'),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    //child: FlutterLogo(),
+                    child: Text('Row 2 Left'),
+                  ),
+                  Expanded(
+                    child: Text('Row 2 Middle'),
+                  ),
+                  Expanded(
+                    child: FlutterLogo(),
                   ),
                 ],
               ),
