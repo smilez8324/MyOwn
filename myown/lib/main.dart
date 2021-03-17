@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         //TEST ACCENT COLOR
         accentColor: Colors.black,
+        //test to see if github is working
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
