@@ -11,8 +11,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
         // changing the primarySwatch below to Colors.green and then invoke
@@ -21,17 +19,13 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
 
-        //PrimaryColor takes over as the bar
-        //primaryColor: Colors.green,
-
         //TEST BRIGHTNESS
         //brightness: Brightness.dark, //This is the background like dark mode
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.blue,
         //TEST ACCENT COLOR
         accentColor: Colors.black,
-        //test to see if github is working
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Start Page'),
     );
   }
 }
@@ -86,35 +80,77 @@ class _MyHomePageState extends State<MyHomePage> {
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Expanded(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                //crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Expanded(
-                    child: Text('Row 1 Left'),
+                  Container(
+                    padding: EdgeInsets.only(bottom: 20.0),
+                    child: new Card(
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Text('Row 1 Left'),
+                      ),
+                    ),
                   ),
-                  Expanded(
-                    child: Text('Row 1 Middle'),
+                  Container(
+                    padding: EdgeInsets.only(bottom: 20.0),
+                    child: Card(
+                      shadowColor: Colors.blue,
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Text('Row 1 Middle'),
+                      ),
+                    ),
                   ),
-                  Expanded(
-                    child: Text('Row 1 Right'),
+                  Container(
+                    padding: EdgeInsets.only(bottom: 20.0),
+                    child: Card(
+                      shadowColor: Colors.blue,
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Text('Row 1 Right'),
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
             Expanded(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                //crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Expanded(
-                    //child: FlutterLogo(),
-                    child: Text('Row 2 Left'),
+                  Container(
+                    child: Card(
+                      shadowColor: Colors.pink,
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Text('Row 2 Left'),
+                      ),
+                    ),
                   ),
-                  Expanded(
-                    child: Text('Row 2 Middle'),
+                  Container(
+                    child: Card(
+                      shadowColor: Colors.pink,
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Text('Row 2 Middle'),
+                      ),
+                    ),
                   ),
-                  Expanded(
-                    child: FlutterLogo(),
+                  Container(
+                    child: Card(
+                      shadowColor: Colors.pink,
+                      child: Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: FlutterLogo(),
+                      ),
+                    ),
                   ),
                 ],
               ),
