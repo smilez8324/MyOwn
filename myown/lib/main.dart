@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -51,15 +53,40 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  List colors = [
+    Colors.red,
+    Colors.green,
+    Colors.yellow,
+    Colors.pink,
+    Colors.cyan,
+    Colors.amber,
+    Colors.deepOrange
+  ];
+  Random random = new Random();
+  int index = 0;
+  void changeIndex() {
+    setState(() => index = random.nextInt(7));
+  }
+
+  void colorNCount() {
+    changeIndex();
+    _incrementCounter();
+  }
+
+  set color(Color color) {}
+
   void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+    setState(
+      () {
+        // This call to setState tells the Flutter framework that something has
+        // changed in this State, which causes it to rerun the build method below
+        // so that the display can reflect the updated values. If we changed
+        // _counter without calling setState(), then the build method would not be
+        // called again, and so nothing would appear to happen.
+        // color = Color(0x00000000);
+        _counter++;
+      },
+    );
   }
 
   @override
@@ -76,305 +103,513 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Container(
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.green,
+      body: SafeArea(
+        child: Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.green,
+              ),
             ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.green,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.green,
+                      ),
                     ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
                           ),
-                        ),
-                        child: new Card(
-                          shadowColor: Colors.blue,
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text('Row 1 Left'),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
-                          ),
-                        ),
-                        child: Card(
-                          shadowColor: Colors.blue,
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text('Row 1 Middle'),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
-                          ),
-                        ),
-                        child: Card(
-                          shadowColor: Colors.blue,
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text('Row 1 Right'),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.green,
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
-                          ),
-                        ),
-                        child: Card(
-                          shadowColor: Colors.pink,
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text('Row 2 Left'),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
-                          ),
-                        ),
-                        child: Card(
-                          shadowColor: Colors.pink,
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text('Row 2 Middle'),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
-                          ),
-                        ),
-                        child: Card(
-                          shadowColor: Colors.pink,
-                          child: Padding(
-                            padding: EdgeInsets.all(16.0),
-                            child: FlutterLogo(),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.green,
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
-                          ),
-                        ),
-                        child: Card(
-                          shadowColor: Colors.pink,
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text('Row 2 Left'),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
-                          ),
-                        ),
-                        child: Card(
-                          shadowColor: Colors.pink,
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text('Row 2 Middle'),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
-                          ),
-                        ),
-                        child: Card(
-                          shadowColor: Colors.pink,
-                          child: Padding(
-                            padding: EdgeInsets.all(16.0),
-                            child: FlutterLogo(),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.green,
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
-                          ),
-                        ),
-                        child: Card(
-                          shadowColor: Colors.pink,
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text('Row 2 Left'),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
-                          ),
-                        ),
-                        child: Card(
-                          shadowColor: Colors.pink,
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text('Row 2 Middle'),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
-                          ),
-                        ),
-                        child: Card(
-                          shadowColor: Colors.pink,
-                          child: Padding(
-                            padding: EdgeInsets.all(16.0),
-                            child: FlutterLogo(),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.green,
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    //shadowColor: Colors.pink,
-                    children: <Widget>[
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
-                          ),
-                        ),
-                        child: Card(
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text(
-                              '$_counter',
-                              style: Theme.of(context).textTheme.headline4,
+                          child: new Card(
+                            shadowColor: Colors.blue,
+                            child: Padding(
+                              padding: EdgeInsets.all(20.0),
+                              child: Text('Row 1 Left'),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.green,
-                    ),
-                  ),
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.green,
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
                           ),
-                        ),
-                        child: Card(
-                          child: Padding(
-                            padding: EdgeInsets.all(20.0),
-                            child: Text(
-                              'If you look above, you will see that the rows are not equal in spacing',
+                          child: Card(
+                            shadowColor: Colors.blue,
+                            child: Padding(
+                              padding: EdgeInsets.all(20.0),
+                              child: Text('Row 1 Middle'),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.blue,
+                            child: Padding(
+                              padding: EdgeInsets.all(20.0),
+                              child: Text('Row 1 Right'),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.green,
+                      ),
+                    ),
+                    child: Wrap(
+                      alignment: WrapAlignment.end,
+                      spacing: 10.0,
+                      runSpacing: 20.0,
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.green,
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: Padding(
+                              padding: EdgeInsets.all(20.0),
+                              child: Text('Row 2 Left'),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: Padding(
+                              padding: EdgeInsets.all(20.0),
+                              child: Text('Row 2 Middle'),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: Padding(
+                              padding: EdgeInsets.all(16.0),
+                              child: FlutterLogo(),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.green,
+                      ),
+                    ),
+                    child: Wrap(
+                      // mainAxisAlignment: MainAxisAlignment.center,
+                      // crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            shadowColor: Colors.pink,
+                            child: FlutterLogo(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.green,
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      //shadowColor: Colors.pink,
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            child: Padding(
+                              padding: EdgeInsets.all(20.0),
+                              child: Text(
+                                '$_counter',
+                                style: Theme.of(context).textTheme.headline4,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.green,
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.green,
+                            ),
+                          ),
+                          child: Card(
+                            child: Padding(
+                              padding: EdgeInsets.all(20.0),
+                              child: Text(
+                                'The rows are now equal in spacing',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -385,12 +620,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         child: FloatingActionButton(
-          onPressed: _incrementCounter,
+          onPressed: colorNCount,
           tooltip: 'Increment if you want',
-          child: Icon(
-            Icons.add,
-            //CHANGE THE COLOR OF THE + SIGN
-            color: Colors.deepPurple,
+          child: new MediaQuery.removePadding(
+            context: context,
+            child: Icon(
+              Icons.add,
+              //CHANGE THE COLOR OF THE + SIGN
+              color: Colors.deepPurple,
+            ),
           ),
         ),
       ),
@@ -398,10 +636,4 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // This trailing comma makes auto-formatting nicer for build methods.
   }
-}
-
-BoxDecoration myBoxDecor() {
-  return BoxDecoration(
-    border: Border.all(),
-  );
 }
