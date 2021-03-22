@@ -64,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
   Random random = new Random();
   int index = 0;
+
   void changeIndex() {
     setState(() => index = random.nextInt(7));
   }
@@ -574,6 +575,27 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                           ),
+                        ),
+                        Container(
+                          height: 150.0,
+                          width: 300.0,
+                          color: Colors.transparent,
+                          child: Container(
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                      begin: Alignment.centerLeft,
+                                      end: Alignment.centerRight,
+                                      colors: [Colors.purple, Colors.blue]),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10.0))),
+                              child: new Center(
+                                child: new Text(
+                                  "Rounded Corner Rectangle Shape",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 22),
+                                  textAlign: TextAlign.center,
+                                ),
+                              )),
                         ),
                       ],
                     ),
