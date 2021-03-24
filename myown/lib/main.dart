@@ -53,24 +53,25 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  List colors = [
-    Colors.red,
-    Colors.green,
-    Colors.yellow,
-    Colors.pink,
-    Colors.cyan,
-    Colors.amber,
-    Colors.deepOrange
-  ];
-  Random random = new Random();
-  int index = 0;
+  //get element => null;
 
-  void changeIndex() {
-    setState(() => index = random.nextInt(7));
+  List changePlusSign() {
+    List colorsList = [
+      Colors.red,
+      Colors.green,
+      Colors.yellow,
+      Colors.pink,
+      Colors.cyan,
+      Colors.amber,
+      Colors.deepOrange
+    ];
+
+    var random = new Random();
+    var element = colorsList[random.nextInt(colorsList.length)];
+    return element;
   }
 
   void colorNCount() {
-    changeIndex();
     _incrementCounter();
   }
 
@@ -99,8 +100,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Container(
-      height: 400.0,
-      width: 400.0,
       color: Colors.transparent,
       child: Container(
         decoration: BoxDecoration(
@@ -613,12 +612,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(10.0))),
                                       child: new Center(
-                                        child: new Text(
-                                          "Rounded Corner Rectangle Shape",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 22),
-                                          textAlign: TextAlign.center,
+                                        child: Opacity(
+                                          opacity: .10,
+                                          child: new Text(
+                                            "Rounded Corner Rectangle Shape",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 22),
+                                            textAlign: TextAlign.center,
+                                          ),
                                         ),
                                       )),
                                 ),
@@ -669,14 +671,15 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             child: FloatingActionButton(
-              onPressed: colorNCount,
+              onPressed: () => {},
               tooltip: 'Increment if you want',
               child: new MediaQuery.removePadding(
                 context: context,
                 child: Icon(
                   Icons.add,
                   //CHANGE THE COLOR OF THE + SIGN
-                  color: Colors.deepPurple,
+                  //color: Colors.deepPurple,
+                  color: changePlusSign(),
                 ),
               ),
             ),
@@ -690,3 +693,18 @@ class _MyHomePageState extends State<MyHomePage> {
     // This trailing comma makes auto-formatting nicer for build methods.
   }
 }
+
+// void changePlusSign(){
+// List colorsList = [
+//   Colors.red,
+//   Colors.green,
+//   Colors.yellow,
+//   Colors.pink,
+//   Colors.cyan,
+//   Colors.amber,
+//   Colors.deepOrange
+// ];
+//
+// var random = new Random();
+// var element = colorsList[random.nextInt(colorsList.length)];
+// }
