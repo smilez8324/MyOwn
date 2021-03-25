@@ -55,27 +55,30 @@ class _MyHomePageState extends State<MyHomePage> {
 
   //get element => null;
 
-  List changePlusSign() {
-    List colorsList = [
-      Colors.red,
-      Colors.green,
-      Colors.yellow,
-      Colors.pink,
-      Colors.cyan,
-      Colors.amber,
-      Colors.deepOrange
-    ];
+  //List changePlusSign() {
+  List colorsList = [
+    Colors.red,
+    Colors.green,
+    Colors.yellow,
+    Colors.pink,
+    Colors.cyan,
+    Colors.amber,
+    Colors.deepOrange,
+  ];
 
-    var random = new Random();
-    var element = colorsList[random.nextInt(colorsList.length)];
-    return element;
-  }
+  var random = new Random();
+  // var element = colorsList[random.nextInt(colorsList.length)];
+  // print(element);
+  //element = randomListItem(element);
+  //}
 
   void colorNCount() {
     _incrementCounter();
   }
 
-  set color(Color color) {}
+  // set color(Color color) {
+  //   changePlusSign();
+  // }
 
   void _incrementCounter() {
     setState(
@@ -99,6 +102,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    var element = colorsList[random.nextInt(colorsList.length)];
+    print(element);
     return Container(
       color: Colors.transparent,
       child: Container(
@@ -667,19 +672,18 @@ class _MyHomePageState extends State<MyHomePage> {
           floatingActionButton: Container(
             decoration: BoxDecoration(
               border: Border.all(
-                color: Colors.green,
+                color: element,
               ),
             ),
             child: FloatingActionButton(
-              onPressed: () => {},
+              onPressed: () => {element},
               tooltip: 'Increment if you want',
               child: new MediaQuery.removePadding(
                 context: context,
                 child: Icon(
                   Icons.add,
                   //CHANGE THE COLOR OF THE + SIGN
-                  //color: Colors.deepPurple,
-                  color: changePlusSign(),
+                  color: element,
                 ),
               ),
             ),
@@ -693,18 +697,3 @@ class _MyHomePageState extends State<MyHomePage> {
     // This trailing comma makes auto-formatting nicer for build methods.
   }
 }
-
-// void changePlusSign(){
-// List colorsList = [
-//   Colors.red,
-//   Colors.green,
-//   Colors.yellow,
-//   Colors.pink,
-//   Colors.cyan,
-//   Colors.amber,
-//   Colors.deepOrange
-// ];
-//
-// var random = new Random();
-// var element = colorsList[random.nextInt(colorsList.length)];
-// }
