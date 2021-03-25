@@ -676,7 +676,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             child: FloatingActionButton(
-              onPressed: () => {element},
+              onPressed: () => {_incrementCounter()},
               tooltip: 'Increment if you want',
               child: new MediaQuery.removePadding(
                 context: context,
