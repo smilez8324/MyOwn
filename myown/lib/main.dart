@@ -156,13 +156,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                       color: Colors.green,
                                     ),
                                   ),
+                                  //child: RotatedBox(
+                                  //  quarterTurns: 1,
                                   child: new Card(
                                     shadowColor: Colors.blue,
                                     child: Padding(
                                       padding: EdgeInsets.all(20.0),
-                                      child: Text('Row 1 Left'),
+                                      child: RotatedBox(
+                                          quarterTurns: 3,
+                                          child: Text('Row 1 Left')),
                                     ),
                                   ),
+                                  //),
                                 ),
                                 Container(
                                   decoration: BoxDecoration(
@@ -174,7 +179,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                     shadowColor: Colors.blue,
                                     child: Padding(
                                       padding: EdgeInsets.all(20.0),
-                                      child: Text('Row 1 Middle'),
+                                      child: RotatedBox(
+                                          quarterTurns: 2,
+                                          child: Text('Row 1 Middle')),
                                     ),
                                   ),
                                 ),
@@ -184,11 +191,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                       color: Colors.green,
                                     ),
                                   ),
-                                  child: Card(
-                                    shadowColor: Colors.blue,
-                                    child: Padding(
-                                      padding: EdgeInsets.all(20.0),
-                                      child: Text('Row 1 Right'),
+                                  child: RotatedBox(
+                                    quarterTurns: 1,
+                                    child: Card(
+                                      shadowColor: Colors.blue,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(20.0),
+                                        child: Text('Row 1 Right'),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -352,15 +362,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                     child: FlutterLogo(),
                                   ),
                                 ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.green,
+                                RotatedBox(
+                                  quarterTurns: 2,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.green,
+                                      ),
                                     ),
-                                  ),
-                                  child: Card(
-                                    shadowColor: Colors.pink,
-                                    child: FlutterLogo(),
+                                    child: Card(
+                                      shadowColor: Colors.pink,
+                                      child: FlutterLogo(),
+                                    ),
                                   ),
                                 ),
                                 Container(
@@ -515,7 +528,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                     shadowColor: Colors.pink,
                                     child: Padding(
                                       padding: EdgeInsets.all(16.0),
-                                      child: FlutterLogo(),
+                                      child: RotatedBox(
+                                          quarterTurns: 2,
+                                          child: FlutterLogo()),
                                     ),
                                   ),
                                 ),
