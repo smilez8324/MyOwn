@@ -1,5 +1,7 @@
 import 'dart:math';
+import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -67,6 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   var random = new Random();
+
   // var element = colorsList[random.nextInt(colorsList.length)];
   // print(element);
   //element = randomListItem(element);
@@ -104,6 +107,17 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     var element = colorsList[random.nextInt(colorsList.length)];
     print(element);
+
+    // final controller = AnimationController(
+    //   vsync: this,
+    //   duration: Duration(seconds: 2),
+    // );
+    //
+    // final animation = Tween(
+    //   begin: 0.0,
+    //   end: 1.0,
+    // ).animate(controller);
+
     return Container(
       color: Colors.transparent,
       child: Container(
@@ -111,7 +125,10 @@ class _MyHomePageState extends State<MyHomePage> {
           gradient: LinearGradient(
               begin: Alignment.bottomRight,
               end: Alignment.topLeft,
-              colors: [Colors.purple, Colors.blue]),
+              colors: [
+                Colors.purple,
+                Colors.blue,
+              ]),
         ),
         child: Scaffold(
           appBar: AppBar(
@@ -124,7 +141,13 @@ class _MyHomePageState extends State<MyHomePage> {
               gradient: LinearGradient(
                   begin: Alignment.bottomRight,
                   end: Alignment.topLeft,
-                  colors: [Colors.purple, Colors.blue]),
+                  colors: [
+                    Colors.purple,
+                    Colors.blue,
+                    Colors.yellow,
+                    Colors.pink,
+                    Colors.cyan,
+                  ]),
             ),
             child: Container(
               child: SafeArea(
@@ -158,30 +181,39 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                   //child: RotatedBox(
                                   //  quarterTurns: 1,
-                                  child: new Card(
-                                    shadowColor: Colors.blue,
-                                    child: Padding(
-                                      padding: EdgeInsets.all(20.0),
-                                      child: RotatedBox(
-                                          quarterTurns: 3,
-                                          child: Text('Row 1 Left')),
+                                  child: Transform.rotate(
+                                    angle: pi / 4,
+                                    child: new Card(
+                                      shadowColor: Colors.blue,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(20.0),
+                                        child: RotatedBox(
+                                            quarterTurns: 3,
+                                            child: Text('Row 1 Left')),
+                                      ),
                                     ),
                                   ),
                                   //),
                                 ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.green,
-                                    ),
+                                BackdropFilter(
+                                  filter: ImageFilter.blur(
+                                    sigmaX: 10,
+                                    sigmaY: 10,
                                   ),
-                                  child: Card(
-                                    shadowColor: Colors.blue,
-                                    child: Padding(
-                                      padding: EdgeInsets.all(20.0),
-                                      child: RotatedBox(
-                                          quarterTurns: 2,
-                                          child: Text('Row 1 Middle')),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.green,
+                                      ),
+                                    ),
+                                    child: Card(
+                                      shadowColor: Colors.blue,
+                                      child: Padding(
+                                        padding: EdgeInsets.all(20.0),
+                                        child: RotatedBox(
+                                            quarterTurns: 2,
+                                            child: Text('Row 1 Middle')),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -197,7 +229,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                       shadowColor: Colors.blue,
                                       child: Padding(
                                         padding: EdgeInsets.all(20.0),
-                                        child: Text('Row 1 Right'),
+                                        child: BackdropFilter(
+                                            filter: ImageFilter.blur(
+                                              sigmaY: 3,
+                                              sigmaX: 3,
+                                            ),
+                                            child: Text('Row 1 Right')),
                                       ),
                                     ),
                                   ),
@@ -225,9 +262,62 @@ class _MyHomePageState extends State<MyHomePage> {
                                       color: Colors.green,
                                     ),
                                   ),
+                                  child: Transform.rotate(
+                                    angle: pi / 4,
+                                    child: Card(
+                                      shadowColor: Colors.pink,
+                                      child: FlutterLogo(),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.green,
+                                    ),
+                                  ),
                                   child: Card(
                                     shadowColor: Colors.pink,
                                     child: FlutterLogo(),
+                                  ),
+                                ),
+                                Transform.rotate(
+                                  angle: pi / 4,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.green,
+                                      ),
+                                    ),
+                                    child: Card(
+                                      shadowColor: Colors.pink,
+                                      child: FlutterLogo(),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                  child: Card(
+                                    shadowColor: Colors.pink,
+                                    child: FlutterLogo(),
+                                  ),
+                                ),
+                                Transform.rotate(
+                                  angle: pi / 4,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.green,
+                                      ),
+                                    ),
+                                    child: Card(
+                                      shadowColor: Colors.pink,
+                                      child: FlutterLogo(),
+                                    ),
                                   ),
                                 ),
                                 Container(
@@ -252,15 +342,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                     child: FlutterLogo(),
                                   ),
                                 ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.green,
+                                Transform.rotate(
+                                  angle: pi / 4,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.green,
+                                      ),
                                     ),
-                                  ),
-                                  child: Card(
-                                    shadowColor: Colors.pink,
-                                    child: FlutterLogo(),
+                                    child: Card(
+                                      shadowColor: Colors.pink,
+                                      child: FlutterLogo(),
+                                    ),
                                   ),
                                 ),
                                 Container(
@@ -274,59 +367,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                     child: FlutterLogo(),
                                   ),
                                 ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.green,
+                                Transform.rotate(
+                                  angle: pi / 4,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.green,
+                                      ),
                                     ),
-                                  ),
-                                  child: Card(
-                                    shadowColor: Colors.pink,
-                                    child: FlutterLogo(),
-                                  ),
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.green,
+                                    child: Card(
+                                      shadowColor: Colors.pink,
+                                      child: FlutterLogo(),
                                     ),
-                                  ),
-                                  child: Card(
-                                    shadowColor: Colors.pink,
-                                    child: FlutterLogo(),
-                                  ),
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                  child: Card(
-                                    shadowColor: Colors.pink,
-                                    child: FlutterLogo(),
-                                  ),
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                  child: Card(
-                                    shadowColor: Colors.pink,
-                                    child: FlutterLogo(),
-                                  ),
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                  child: Card(
-                                    shadowColor: Colors.pink,
-                                    child: FlutterLogo(),
                                   ),
                                 ),
                                 Container(
@@ -627,7 +679,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               end: Alignment.topLeft,
                                               colors: [
                                                 Colors.purple,
-                                                Colors.blue
+                                                Colors.blue,
                                               ]),
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(10.0))),
