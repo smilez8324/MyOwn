@@ -556,6 +556,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                     ),
                                   ),
                                 ),
+                                Placeholder(
+                                  fallbackHeight: 300,
+                                  fallbackWidth: 300,
+                                ),
                                 Container(
                                   decoration: BoxDecoration(
                                     border: Border.all(
@@ -569,6 +573,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                       child: Text('Row 2 Middle'),
                                     ),
                                   ),
+                                ),
+                                Placeholder(
+                                  fallbackHeight: 300,
+                                  fallbackWidth: 300,
                                 ),
                                 Container(
                                   decoration: BoxDecoration(
