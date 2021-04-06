@@ -142,11 +142,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   begin: Alignment.bottomRight,
                   end: Alignment.topLeft,
                   colors: [
+                    Colors.blue,
+                    Colors.purple,
+                    Colors.purple,
+                    Colors.purple,
+                    Colors.purple,
                     Colors.purple,
                     Colors.blue,
-                    Colors.yellow,
-                    Colors.pink,
-                    Colors.cyan,
                   ]),
             ),
             child: Container(
@@ -244,115 +246,129 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         Expanded(
-                          flex: 2,
+                          flex: 0,
                           child: Container(
                             decoration: BoxDecoration(
                               border: Border.all(
                                 color: Colors.green,
                               ),
                             ),
-                            child: Wrap(
-                              alignment: WrapAlignment.end,
-                              spacing: 10.0,
-                              runSpacing: 20.0,
+                            //child: Wrap(
+                            // alignment: WrapAlignment.end,
+                            // spacing: 10.0,
+                            // runSpacing: 20.0,
+                            child: Stack(
+                              alignment: AlignmentDirectional.bottomCenter,
                               children: <Widget>[
+                                Positioned(
+                                  bottom: -50,
+                                  right: -50,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.blue,
+                                      ),
+                                    ),
+                                    child: Positioned(
+                                      bottom: -50,
+                                      right: -50,
+                                      child: Transform.rotate(
+                                        angle: pi / 4,
+                                        child: Card(
+                                          shadowColor: Colors.pink,
+                                          child: FlutterLogo(),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                                 Container(
                                   decoration: BoxDecoration(
                                     border: Border.all(
                                       color: Colors.green,
                                     ),
                                   ),
+                                  child: Card(
+                                    shadowColor: Colors.pink,
+                                    child: FlutterLogo(),
+                                  ),
+                                ),
+                                Transform.rotate(
+                                  angle: pi / 4,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.green,
+                                      ),
+                                    ),
+                                    child: Card(
+                                      shadowColor: Colors.pink,
+                                      child: FlutterLogo(),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                  child: Card(
+                                    shadowColor: Colors.pink,
+                                    child: FlutterLogo(),
+                                  ),
+                                ),
+                                Transform.rotate(
+                                  angle: pi / 4,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.green,
+                                      ),
+                                    ),
+                                    child: Card(
+                                      shadowColor: Colors.pink,
+                                      child: FlutterLogo(),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                  child: Card(
+                                    shadowColor: Colors.pink,
+                                    child: FlutterLogo(),
+                                  ),
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                  child: Card(
+                                    shadowColor: Colors.pink,
+                                    child: FlutterLogo(),
+                                  ),
+                                ),
+                                Positioned(
+                                  top: 500,
+                                  right: 50,
                                   child: Transform.rotate(
                                     angle: pi / 4,
-                                    child: Card(
-                                      shadowColor: Colors.pink,
-                                      child: FlutterLogo(),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                  child: Card(
-                                    shadowColor: Colors.pink,
-                                    child: FlutterLogo(),
-                                  ),
-                                ),
-                                Transform.rotate(
-                                  angle: pi / 4,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Colors.green,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: Colors.yellow,
+                                        ),
                                       ),
-                                    ),
-                                    child: Card(
-                                      shadowColor: Colors.pink,
-                                      child: FlutterLogo(),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                  child: Card(
-                                    shadowColor: Colors.pink,
-                                    child: FlutterLogo(),
-                                  ),
-                                ),
-                                Transform.rotate(
-                                  angle: pi / 4,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Colors.green,
+                                      child: Card(
+                                        shadowColor: Colors.yellow,
+                                        child: FlutterLogo(),
                                       ),
-                                    ),
-                                    child: Card(
-                                      shadowColor: Colors.pink,
-                                      child: FlutterLogo(),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                  child: Card(
-                                    shadowColor: Colors.pink,
-                                    child: FlutterLogo(),
-                                  ),
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Colors.green,
-                                    ),
-                                  ),
-                                  child: Card(
-                                    shadowColor: Colors.pink,
-                                    child: FlutterLogo(),
-                                  ),
-                                ),
-                                Transform.rotate(
-                                  angle: pi / 4,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Colors.green,
-                                      ),
-                                    ),
-                                    child: Card(
-                                      shadowColor: Colors.pink,
-                                      child: FlutterLogo(),
                                     ),
                                   ),
                                 ),
@@ -556,9 +572,25 @@ class _MyHomePageState extends State<MyHomePage> {
                                     ),
                                   ),
                                 ),
-                                Placeholder(
-                                  fallbackHeight: 300,
-                                  fallbackWidth: 300,
+                                ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty
+                                        .resolveWith<Color>(
+                                      (Set<MaterialState> states) {
+                                        if (states
+                                            .contains(MaterialState.pressed))
+                                          return Theme.of(context)
+                                              .colorScheme
+                                              .secondary
+                                              .withOpacity(0.5);
+                                        return null;
+                                      },
+                                    ),
+                                  ),
+                                  onPressed: () {},
+                                  child: null,
+                                  //fallbackHeight: 300,
+                                  //fallbackWidth: 30,
                                 ),
                                 Container(
                                   decoration: BoxDecoration(
@@ -574,9 +606,25 @@ class _MyHomePageState extends State<MyHomePage> {
                                     ),
                                   ),
                                 ),
-                                Placeholder(
-                                  fallbackHeight: 300,
-                                  fallbackWidth: 300,
+                                ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty
+                                        .resolveWith<Color>(
+                                      (Set<MaterialState> states) {
+                                        if (states
+                                            .contains(MaterialState.pressed))
+                                          return Theme.of(context)
+                                              .colorScheme
+                                              .primary
+                                              .withOpacity(0.5);
+                                        return null;
+                                      },
+                                    ),
+                                  ),
+                                  onPressed: () {},
+                                  child: null,
+                                  //fallbackHeight: 300,
+                                  //fallbackWidth: 30,
                                 ),
                                 Container(
                                   decoration: BoxDecoration(
@@ -693,7 +741,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               Radius.circular(10.0))),
                                       child: new Center(
                                         child: Opacity(
-                                          opacity: .10,
+                                          opacity: 1,
                                           child: new Text(
                                             "Rounded Corner Rectangle Shape",
                                             style: TextStyle(
@@ -765,9 +813,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-    ); //);
-    //);
-    //,
+    );
 
     // This trailing comma makes auto-formatting nicer for build methods.
   }
