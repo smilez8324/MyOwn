@@ -573,6 +573,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                 ),
                                 ElevatedButton(
+                                  onPressed: () => {_incrementCounter()},
                                   style: ButtonStyle(
                                     backgroundColor: MaterialStateProperty
                                         .resolveWith<Color>(
@@ -587,7 +588,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                       },
                                     ),
                                   ),
-                                  onPressed: () {},
                                   child: null,
                                   //fallbackHeight: 300,
                                   //fallbackWidth: 30,
@@ -607,6 +607,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                 ),
                                 ElevatedButton(
+                                  onPressed: () => {_incrementCounter()},
                                   style: ButtonStyle(
                                     backgroundColor: MaterialStateProperty
                                         .resolveWith<Color>(
@@ -621,7 +622,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                       },
                                     ),
                                   ),
-                                  onPressed: () {},
                                   child: null,
                                   //fallbackHeight: 300,
                                   //fallbackWidth: 30,
